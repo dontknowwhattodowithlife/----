@@ -1,0 +1,72 @@
+body {
+    background: linear-gradient(to bottom, #581409, #ffad90);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+div {
+    text-align: center;
+    vertical-align: middle;
+}
+h1 {
+    color: #ff477e;
+}
+#yesButton {
+    background-color: #06d6a0;
+    transition: transform 0.3s;
+    margin-right: 10px;
+    width: 120px;
+    font-size: 20px;
+    height: 40px;
+    color: #fff;
+    margin-left: -140px;
+    border-radius: 10px;
+}
+#no {
+    position: absolute;
+    background-color: #ef476f;
+    transition: transform 0.3s;
+    margin-left: 10px;
+    width: 120px;
+    /* font-size: 30px; */
+    height: 40px;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.custom-alert {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    background-color: #ffe0e0;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(232, 131, 131, 0.2);
+    z-index: 1000;
+}
+
+.custom-alert p {
+    margin: 0;
+    color: #da7b7b;
+}
+
+.close-btn {
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: rgb(206, 54, 37);
+}
+
+.overlay {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}

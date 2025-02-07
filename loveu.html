@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <body>
+
+        <div>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <h1 style="text-shadow: 3px 3px 5px rgb(112, 77, 218);"> Do u love me? </h1>
+            <img id="pic" src="flower.jpg" alt="Valentine's Day Image" style="max-width: 300px; height: auto;">
+            <br/>
+            <br/>
+            <br/>
+            <button id="yesButton">Yes</button>
+            <button id="no">No</button>
+            <link rel="stylesheet" href="style.css">
+        </div>
+
+        <div id="overlay" class="overlay"></div>
+        
+        <div id="customAlert" class="custom-alert">
+            <span class="close-btn" onclick="closeAlert()">&hearts;</span>
+            <p>I love you too:&gt;! <br/> 
+            <span style="color:#ffe0e0"> ytlink </span> 
+            </p>
+            
+        </div>
+
+        <script>
+            document.getElementById("yesButton").addEventListener("click", showAlert);
+
+            var yesButton = document.getElementById("yesButton");
+            var no = document.getElementById("no");
+            var pic = document.getElementById("pic");
+
+            var noTexts = ["really?", "huhu,u don't love me anymore:<", "huhuhu", "Don't do this to me :(", "You're breaking my heart", "I'm gonna cry"];
+            var imageSources = ["huhu.jpg","bread.jpg","dead.jpg","shrimp.jpg"];
+
+            no.addEventListener("click", change);
+
+            function change() {
+                var randomIndex = Math.floor(Math.random() * noTexts.length);
+                var randomText = noTexts[randomIndex];
+                no.innerText = randomText;
+
+                var i = Math.floor(Math.random() * 1000) + 1;
+                var j = Math.floor(Math.random() * 700) + 1;
+                no.style.left = i + "px";
+                no.style.top = j + "px";
+
+                var currentWidth = yesButton.offsetWidth;
+                var currentHeight = yesButton.offsetHeight
+                yesButton.style.width = currentWidth + 30 + "px";
+                yesButton.style.height = currentHeight + 10 + "px";
+
+                var randomImageIndex = Math.floor(Math.random() * imageSources.length);
+                pic.src = imageSources[randomImageIndex];
+            }
+            
+            function showAlert() {
+                const alertBox =
+                    document.getElementById('customAlert');
+                alertBox.style.display = 'block';
+                overlay.style.display = 'block';
+            }
+
+            function closeAlert() {
+                const alertBox =
+                    document.getElementById('customAlert');
+                alertBox.style.display = 'none';
+                window.close();
+            }
+
+        </script>
+
+  </body>
+</html>
